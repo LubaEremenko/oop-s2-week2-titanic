@@ -14,12 +14,13 @@ public class Main {
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/titanicmanifest", "root", "Memory1979@");
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from passengers");
+            ResultSet rs = stmt.executeQuery("select * from paxnames");
 
-            System.out.println( "before while");
+
             while (rs.next())
-                System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3) + " "  + rs.getString(4) + " " + rs.getString(5) + " " + rs.getString(6) + " " + rs.getString(7) + " " + rs.getString(8) + " " + rs.getString(9) + " " + rs.getString(10) + " " + rs.getString(11));
-
+                System.out.println(rs.getInt(1) + " " + rs.getString(2));
+                        /*+ " " + rs.getString(3) + " "  + rs.getString(4) + " " + rs.getString(5) + " " + rs.getString(6) + " " + rs.getString(7) + " " + rs.getString(8) + " " + rs.getString(9) + " " + rs.getString(10) + " " + rs.getString(11));
+                            */
 
             System.out.println( "after while");
             con.close();
